@@ -1,0 +1,20 @@
+{
+  "name": "ps-backend",
+  "version": "1.0.0",
+  "description": "Backend Code to host RESTful Api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Stephanie Connelly",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "csv-array": "0.0.22",
+    "csvtojson": "^2.0.3",
+    "express": "^4.16.3",
+    "fast-csv": "^2.4.1",
+    "mongoose": "^5.1.3"
+  }
+}
