@@ -11,6 +11,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
 
+app.use((req, res)=>{
+  res.setHeader('Access-Control-Allow-Origin:', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type')
+  res.setHeader('Access-Control-Allow-Credentials', true)
+})
+
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
