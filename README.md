@@ -8,6 +8,15 @@ The service is hosted on Heroku using the free hobby tier, which means it will b
 
 This was built with a Node API and Mongo database.
 
+
+### mLab
+
+I worked with MongoDB locally and used mLab for deploying it to Heroku. 
+
+This is really great documentation to learn more:
+https://forum.freecodecamp.org/t/guide-for-using-mongodb-and-deploying-to-heroku/19347
+
+
 ### User Stories
 
 ###### 1. User can view a list of questions
