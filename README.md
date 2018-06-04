@@ -1,6 +1,6 @@
 ### Arithmetic Question Management API
 
-Back end for Arithmetic Question Management app.  Allows user to view, create, and edit basic arithmetic multiple-choice questions. 
+Back end for Arithmetic Question Management app.  Allows user to view, create, and edit basic arithmetic multiple-choice questions.
 
 The service is hosted on Heroku using the free hobby tier, which means it will be shut down after a period of no activity. It may take several seconds for a response on the first request while this instance and the back end service are started.
 
@@ -8,10 +8,16 @@ The service is hosted on Heroku using the free hobby tier, which means it will b
 
 This was built with a Node API and Mongo database.
 
+## Turning CSV file into correct format
+
+In my index.js file I created 2 streams, one stream to read the data.csv file and another stream to write a new file that replaces all ','s into space, and another that turns all '|' (pipes) into ","s. This is so that it matchs the schema that I created with Node.js.
+
+```const readData = fs.readFileSync('./src/data.csv', 'utf8').replace(/,/g, "").replace(/\|/g, ",")```
+```const newData = fs.writeFileSync('./src/newData.csv', readData)```
 
 ### mLab
 
-I worked with MongoDB locally and used mLab for deploying it to Heroku. 
+I worked with MongoDB locally and used mLab for deploying it to Heroku.
 
 This is really great documentation to learn more:
 https://forum.freecodecamp.org/t/guide-for-using-mongodb-and-deploying-to-heroku/19347
@@ -35,7 +41,7 @@ https://forum.freecodecamp.org/t/guide-for-using-mongodb-and-deploying-to-heroku
 | POST  | `/questions`              |
 | GET  | `/questions`               |
 | GET (By id)  | `/questions/:id`   |
-| PATCH   | `/questions/:id`        |    
+| PATCH   | `/questions/:id`        |
 | DELETE  | `/questions/:id`        |
 
 # CRUD ACTIONS
