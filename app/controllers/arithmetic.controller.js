@@ -1,7 +1,7 @@
 const Arithmetic = require('../models/arithmetic.model.js');
 
 // Create and Save a new arithmetic
-exports.create = (req, res) => {
+exports.create = (req, res, next) => {
   // Validate request
     if(!req.body.question & !req.body.answer) {
         return res.status(400).send({
@@ -28,7 +28,7 @@ exports.create = (req, res) => {
 };
 
 // Retrieve and return all Arithmetic Questions from the database.
-exports.findAll = (req, res) => {
+exports.findAll = (req, res, next) => {
   Arithmetic.find()
      .then(arithmetics => {
          res.send(arithmetics);
@@ -40,7 +40,7 @@ exports.findAll = (req, res) => {
 };
 
 // Find a single Arithmetic Q with a ArithmeticId
-exports.findOne = (req, res) => {
+exports.findOne = (req, res, next) => {
   Arithmetic.findById(req.params.arithmeticId)
       .then(arithmetic => {
           if(!arithmetic) {
@@ -62,7 +62,7 @@ exports.findOne = (req, res) => {
 };
 
 // Update a Arithmetic Q identified by the ArithmeticId in the request
-exports.update = (req, res) => {
+exports.update = (req, res, next) => {
   // Validate Request
       if(!req.body.question) {
           return res.status(400).send({
@@ -96,7 +96,7 @@ exports.update = (req, res) => {
 };
 
 // Delete a Arithmetic Q with the specified ArithmeticId in the request
-exports.delete = (req, res) => {
+exports.delete = (req, res, next) => {
   Arithmetic.findByIdAndRemove(req.params.arithmeticId)
       .then(arithmetic => {
           if(!arithmetic) {
